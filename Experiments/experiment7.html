@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>React Components using JSX and Props</title>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .student {
+            border: 2px solid blue;
+            padding: 15px;
+            margin: 10px auto;
+            width: 300px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        function Student(props) {
+            return (
+                <div className="student">
+                    <h2>Student Details</h2>
+                    <p><b>Name:</b> {props.name}</p>
+                    <p><b>Course:</b> {props.course}</p>
+                    <p><b>Marks:</b> {props.marks}</p>
+                </div>
+            );
+        }
+
+        function App() {
+            return (
+                <div>
+                    <h1>Creating React Components using JSX and Props</h1>
+
+                    <Student
+                        name="Ashutosh Tiwari"
+                        course="B.Tech CSE"
+                        marks="85"
+                    />
+
+                    <Student
+                        name="Rahul Sharma"
+                        course="B.Tech IT"
+                        marks="90"
+                    />
+
+                    <Student
+                        name="Priya Singh"
+                        course="B.Tech AI"
+                        marks="88"
+                    />
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(
+            document.getElementById("root")
+        );
+
+        root.render(<App />);
+
+    </script>
+
+</body>
+</html>

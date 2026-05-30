@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation using JavaScript Events</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            border: 3px solid blue;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 8px;
+            margin: 10px;
+            width: 250px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 id="heading">Welcome to JavaScript DOM</h1>
+
+        <p id="para">
+            This paragraph can be shown, hidden, and modified dynamically.
+        </p>
+
+        <input type="text" id="userInput" placeholder="Enter new heading">
+
+        <br><br>
+
+        <button onclick="changeHeading()">Change Heading</button>
+        <button onclick="changeColor()">Change Background</button>
+        <button onclick="increaseFont()">Increase Font Size</button>
+        <button onclick="toggleParagraph()">Show/Hide Paragraph</button>
+        <button onclick="resetPage()">Reset</button>
+
+    </div>
+
+    <script>
+        function changeHeading() {
+            let text = document.getElementById("userInput").value;
+
+            if (text !== "") {
+                document.getElementById("heading").innerHTML = text;
+            }
+        }
+
+        function changeColor() {
+            document.body.style.backgroundColor = "lightblue";
+        }
+
+        function increaseFont() {
+            document.getElementById("heading").style.fontSize = "40px";
+        }
+
+        function toggleParagraph() {
+            let para = document.getElementById("para");
+
+            if (para.style.display === "none") {
+                para.style.display = "block";
+            } else {
+                para.style.display = "none";
+            }
+        }
+
+        function resetPage() {
+            document.getElementById("heading").innerHTML = "Welcome to JavaScript DOM";
+            document.getElementById("heading").style.fontSize = "32px";
+            document.getElementById("para").style.display = "block";
+            document.getElementById("userInput").value = "";
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
+
+</body>
+</html>

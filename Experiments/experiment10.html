@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Management System - Java OOP Program</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: blue;
+        }
+
+        pre {
+            border: 2px solid blue;
+            padding: 15px;
+            background-color: #f4f4f4;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Bank Management System Using OOP Concepts</h1>
+
+<pre>
+abstract class BankAccount {
+
+    private String accountNumber;
+    private String accountHolderName;
+    private double balance;
+
+    public BankAccount(String accountNumber,
+                       String accountHolderName,
+                       double balance) {
+        this.accountNumber = accountNumber;
+        this.accountHolderName = accountHolderName;
+        this.balance = balance;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public String getAccountHolderName() {
+        return accountHolderName;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+    }
+
+    public void displayDetails() {
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Account Holder Name: " + accountHolderName);
+        System.out.println("Balance: Rs." + balance);
+    }
+
+    public abstract void calculateInterest();
+}
+
+class SavingsAccount extends BankAccount {
+
+    public SavingsAccount(String accountNumber,
+                          String accountHolderName,
+                          double balance) {
+        super(accountNumber, accountHolderName, balance);
+    }
+
+    public void calculateInterest() {
+        double interest = getBalance() * 0.05;
+        System.out.println("Savings Account Interest: Rs." + interest);
+    }
+}
+
+class CurrentAccount extends BankAccount {
+
+    public CurrentAccount(String accountNumber,
+                          String accountHolderName,
+                          double balance) {
+        super(accountNumber, accountHolderName, balance);
+    }
+
+    public void calculateInterest() {
+        double interest = getBalance() * 0.02;
+        System.out.println("Current Account Interest: Rs." + interest);
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        SavingsAccount sa =
+            new SavingsAccount("SA101",
+                               "Ashutosh Tiwari",
+                               10000);
+
+        CurrentAccount ca =
+            new CurrentAccount("CA201",
+                               "Rahul Sharma",
+                               20000);
+
+        sa.deposit(5000);
+        sa.displayDetails();
+        sa.calculateInterest();
+
+        ca.deposit(3000);
+        ca.displayDetails();
+        ca.calculateInterest();
+    }
+}
+</pre>
+
+</body>
+</html>
