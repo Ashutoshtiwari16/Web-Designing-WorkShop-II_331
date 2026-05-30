@@ -1,45 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Result</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Result Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            text-align: center;
+            padding: 30px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            width: 300px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            width: 90%;
+        }
+        button {
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
 
-<h2>Result Program</h2>
+<div class="container">
+    <h2>Result Calculator</h2>
 
-<button onclick="marks()">Enter Marks</button>
+    <!-- Input for number of subjects -->
+    <input type="number" id="subjects" placeholder="Enter number of subjects">
 
-<p id="output"></p>
+    <button onclick="getMarks()">Enter Marks</button>
+
+    <div id="marksInputs"></div>
+
+    <button onclick="calculate()">Calculate Result</button>
+
+    <div id="result"></div>
+</div>
 
 <script>
-function marks() {
-  var n = prompt("Kitne subject hai?");
-  var total = 0;
+    let totalSubjects = 0;
 
-  for (var i = 1; i <= n; i++) {
-    var m = prompt("Subject " + i + " ke marks daalo:");
-    total = total + Number(m);
-  }
+    function getMarks() {
+        totalSubjects = document.getElementById("subjects").value;
+        let marksDiv = document.getElementById("marksInputs");
+        marksDiv.innerHTML = "";
 
-  var avg = total / n;
-  var grade;
+        for (let i = 1; i <= totalSubjects; i++) {
+            marksDiv.innerHTML += 
+                `<input type="number" id="mark${i}" placeholder="Enter marks for subject ${i}">`;
+        }
+    }
 
-  if (avg >= 60) {
-    grade = "A";
-  } else if (avg >= 50) {
-    grade = "B";
-  } else if (avg >= 40) {
-    grade = "C";
-  } else {
-    grade = "Fail";
-  }
+    function calculate() {
+        let total = 0;
 
-  document.getElementById("output").innerHTML =
-    "Total = " + total + "<br>" +
-    "Average = " + avg + "<br>" +
-    "Grade = " + grade;
-}
+        // Loop to get marks
+        for (let i = 1; i <= totalSubjects; i++) {
+            let mark = parseFloat(document.getElementById("mark" + i).value);
+            total += mark;
+        }
+
+        let average = total / totalSubjects;
+        let grade = "";
+        let result = "";
+
+        // If-else conditions for grade
+        if (average >= 90) grade = "A+";
+        else if (average >= 75) grade = "A";
+        else if (average >= 60) grade = "B";
+        else if (average >= 50) grade = "C";
+        else grade = "F";
+
+        // Pass/Fail condition
+        if (average >= 50) result = "Pass";
+        else result = "Fail";
+
+        // Display result dynamically
+        document.getElementById("result").innerHTML =
+            "Total Marks: " + total + "<br>" +
+            "Average Marks: " + average.toFixed(2) + "<br>" +
+            "Grade: " + grade + "<br>" +
+            "Result: " + result;
+    }
 </script>
 
 </body>

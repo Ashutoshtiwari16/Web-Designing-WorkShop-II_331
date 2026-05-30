@@ -1,112 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TechStore</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TechStore</title>
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="#">TechStore</a>
+    <div class="container">
+        <a class="navbar-brand" href="#">TechStore</a>
 
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="menu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-      </ul>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
 
-<!--  Product Section -->
+<!-- Product Section -->
 <div class="container mt-5">
-  <div class="row">
+    <h2 class="text-center mb-4">Our Products</h2>
 
-    <!-- Card 1 -->
-    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-      <div class="card">
-        <img src="https://via.placeholder.com/300" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">Laptop</h5>
-          <p>High performance laptop</p>
-          <h6>₹50,000</h6>
-          <span class="badge bg-success">New</span>
-          <br><br>
-          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1">
-            View Details
-          </button>
+    <div class="row">
+
+        <!-- Product 1 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="smartphone.webp" class="card-img-top" alt="Smartphone">
+                <div class="card-body">
+                    <h5 class="card-title">Smartphone <span class="badge bg-success">New</span></h5>
+                    <p class="card-text">Latest smartphone with advanced features.</p>
+                    <h6>₹20,000</h6>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1">
+                        View Details
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Card 2 -->
-    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-      <div class="card">
-        <img src="https://via.placeholder.com/300" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">Mobile</h5>
-          <p>Latest smartphone</p>
-          <h6>₹20,000</h6>
-          <span class="badge bg-danger">Sale</span>
-          <br><br>
-          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal2">
-            View Details
-          </button>
+        <!-- Product 2 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="laptop1.webp" class="card-img-top" alt="Laptop">
+                <div class="card-body">
+                    <h5 class="card-title">Laptop <span class="badge bg-warning">Sale</span></h5>
+                    <p class="card-text">High performance laptop for work and gaming.</p>
+                    <h6>₹50,000</h6>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal2">
+                        View Details
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Card 3 -->
-    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-      <div class="card">
-        <img src="https://via.placeholder.com/300" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">Headphones</h5>
-          <p>Noise cancelling</p>
-          <h6>₹5,000</h6>
-          <span class="badge bg-success">New</span>
-          <br><br>
-          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal3">
-            View Details
-          </button>
+        <!-- Product 3 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img height="400px"src="headphones.webp" class="card-img-top" alt="Headphones">
+                <div class="card-body">
+                    <h5 class="card-title">Headphones <span class="badge bg-info">Hot</span></h5>
+                    <p class="card-text">Noise cancelling wireless headphones.</p>
+                    <h6>₹5,000</h6>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal3">
+                        View Details
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-  </div>
+    </div>
 </div>
 
-<!--  Modal Example -->
+<!-- Modals -->
 <div class="modal fade" id="modal1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5>Laptop Details</h5>
-        <button class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        This is a high-performance laptop with 16GB RAM.
-      </div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Smartphone Details</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Full HD display, 8GB RAM, 128GB storage.</p>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
+
+<div class="modal fade" id="modal2">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Laptop Details</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Intel i7 processor, 16GB RAM, 512GB SSD.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal3">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Headphones Details</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Bluetooth, 20-hour battery life, deep bass.</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Footer -->
 <footer class="bg-dark text-white text-center p-3 mt-5">
-  <p>©️ 2026 TechStore | Follow us on social media</p>
+    <p>© 2026 TechStore | All Rights Reserved</p>
 </footer>
 
 <!-- Bootstrap JS -->
