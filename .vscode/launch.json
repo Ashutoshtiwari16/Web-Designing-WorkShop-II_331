@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch Experiment10 Main",
+      "request": "launch",
+      "mainClass": "main",
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "javac: compile experiment10"
+    }
+  ]
+}
