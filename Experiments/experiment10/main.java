@@ -9,7 +9,7 @@ public class main {
 
         CurrentAccount ca = new CurrentAccount(
                 "CA201",
-                "Rahul Sharma",
+                "Rahul ",
                 15000);
 
         sa.deposit(2000);
